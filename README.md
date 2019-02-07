@@ -1,6 +1,16 @@
-# testvue
+# TodoList 
 
-## Project setup
+## Project Info
+> This is a simple project for practicing using vue to create and todolist,
+> the content including frontend and backend.
+
+## Tech Stack
+* Vue.js
+* Node.js
+* mongodb
+
+
+## Setup
 ```
 npm install
 ```
