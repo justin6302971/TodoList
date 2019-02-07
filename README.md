@@ -4,6 +4,9 @@
 > This is a simple project for practicing using vue to create and todolist,
 > the content including frontend and backend.
 
+## Progress
+> todo list front-end functions
+
 ## Tech Stack
 * Vue.js
 * Node.js
