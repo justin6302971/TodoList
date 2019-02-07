@@ -1,21 +1,22 @@
 <template>
   <div id="app">
-    {{msg}}
-    <Todos v-bind:todos="todos"/>
-    <!-- <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <Header/>
+    <Todos v-bind:todos="todos" v-on:del-todoItem="deleteTodo"/>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import Todos from './components/Todos.vue'
-
+import Todos from './components/Todos.vue';
+import Header from './components/Layout/Header.vue';
+import Footer from './components/Layout/Footer.vue';
 
 export default {
   name: 'app',
   components: {
-     Todos
+     Header,
+     Todos,
+     Footer
   },
   data(){
     return {
@@ -23,32 +24,42 @@ export default {
         {
           id:1,
           title:"test",
-          complete:true
+          completed:true
         },
         {
           id:2,
           title:"test12",
-          complete:true
+          completed:true
         },
         {
           id:3,
           title:"testeeee",
-          complete:false
+          completed:false
         }
-      ],
-      msg:"My first TodoList by Vue"
+      ]
+    }
+  },
+  methods:{
+    deleteTodo(id){
+      this.todos=this.todos.filter(i=>i.id!==id);
     }
   }
 }
 </script>
 
 <style>
+* {
+ box-sizing: border-box;
+ margin:0;
+ padding: 0;
+
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+
 </style>
