@@ -1,12 +1,15 @@
 <template>
   <div id="app">
     <Header/>
+    <AddItems v-on:add-todo="addTodo"/>
     <Todos v-bind:todos="todos" v-on:del-todoItem="deleteTodo"/>
     <Footer></Footer>
   </div>
 </template>
 
 <script>
+
+import AddItems from './components/AddItems.vue';
 import Todos from './components/Todos.vue';
 import Header from './components/Layout/Header.vue';
 import Footer from './components/Layout/Footer.vue';
@@ -15,6 +18,7 @@ export default {
   name: 'app',
   components: {
      Header,
+     AddItems,
      Todos,
      Footer
   },
@@ -40,6 +44,10 @@ export default {
     }
   },
   methods:{
+    addTodo(newTodo){
+
+      this.todos=[...this.todos,newTodo]
+    },
     deleteTodo(id){
       this.todos=this.todos.filter(i=>i.id!==id);
     }
@@ -60,6 +68,18 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+}
+
+.btn{
+  display: inline-block;
+  border:none;
+  background: #555;
+  color:#fff;
+  cursor: pointer;
+  padding:7px 20px;
+}
+.btn:hover{
+  background: #666;
 }
 
 </style>

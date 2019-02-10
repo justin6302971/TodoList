@@ -13,6 +13,6 @@ footer{
     margin-top: 20px;
     font-style:italic;
     font-size:12;
-    
+    text-align: center;
 }
 </style>

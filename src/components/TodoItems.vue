@@ -10,20 +10,11 @@
 
 <script>
 export default {
-    name:"todoItem",
+    name:"TodoItem",
     props:["todoData"],
     methods:{
         markonComplete(){
             this.todoData.completed= !this.todoData.completed;
-
-        },    
-        greet: function (event) {
-            // `this` inside methods points to the Vue instance
-            alert('Hello ' + this.title + '!')
-            // `event` is the native DOM event
-            if (event) {
-                alert(event.target.tagName)
-            }
         }
     }
 }
